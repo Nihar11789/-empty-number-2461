@@ -10,7 +10,7 @@ async function SigninUser(req, res){
      const {email,password,name,gender} = req.body;
      const user = await UserModel.find({email});
      if(user.length==0){
-         UserModel.create(req.body);
+        await UserModel.create(req.body);
          res.send({
              "success": true,
              "message": "User created successfully"
