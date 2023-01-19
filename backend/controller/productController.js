@@ -31,13 +31,55 @@ async function getProducts(req, res){
     try {
         // const token = req.headers.authorization
         // let user = await jwt.verify(token, secret)
+//SORTING_PRODUCTS---------------------------------------------
         let query = req.query;
-        console.log(query);
-        let post = await productModel.find()
-        res.send({
-            "success": true,
-            "message": post
-        })
+        //console.log(query);=={}
+        if(Object.keys(query).length === 0){         //here the query is empty object and we are later on making the keys. 
+            let post = await productModel.find()
+            res.send({
+                "success": true,
+                "message": post
+            })
+        } else {
+            if(query._sort == "asc" && query._rating){
+                let post = await productModel.find({hidden_stars:{$gt:query._rating}}).sort({new_price:1})
+                res.send({
+                    "success": true,
+                    "message": post
+                }) 
+            } else if(query._sort == "desc" && query._rating){
+                let post = await productModel.find({hidden_stars:{$gt:query._rating}}).sort({new_price:-1})
+                res.send({
+                    "success": true,
+                    "message": post
+                }) 
+            } else if(query._sort == "asc"){
+                let post = await productModel.find().sort({new_price:1})
+                res.send({
+                    "success": true,
+                    "message": post
+                }) 
+            } else if(query._sort == "desc"){
+                let post = await productModel.find().sort({new_price:-1})
+                res.send({
+                    "success": true,
+                    "message": post
+                }) 
+            } else if(query._rating){
+                let post = await productModel.find({hidden_stars:{$gt:query._rating}})
+                res.send({
+                    "success": true,
+                    "message": post
+                })  
+            } else {
+                let post = await productModel.find()
+                res.send({
+                    "success": true,
+                    "message": post
+                })
+            }
+        }
+        
     } catch (error) {
         res.send({
             "success": false,
