@@ -1,0 +1,255 @@
+body{
+ font-family: 'Questrial', sans-serif ;
+ overflow-x: hidden;
+}
+/* nav-bar */
+
+.logregbtn{
+    text-align: end;
+    margin-right: 100px; 
+    font-size: 15px;font-weight: 800;
+    cursor: pointer;
+}
+#mobileLogo{
+    width: 100px;
+    display: none;
+}
+
+#navContainer{
+    width: 100%;
+    position: fixed;
+    margin: auto;
+    z-index: 1;
+    background-color: white;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+#navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+#iconborder{
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#logo{
+    width: 40%;
+}
+#searchbox{
+    justify-content: flex-end;
+    display: flex;
+     gap: 10px;
+   width: 40%;
+}
+#search{
+    width:40%; border:none; 
+    outline: none; 
+}
+#menu{
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    font-family: 'Questrial', sans-serif;
+    font-weight: 700;
+    position: relative;
+}
+/* banner */
+#banner{
+    width: 95%;
+    margin: auto;
+}
+#bannerImage{
+    width: 100%;
+    margin-top: 140px;
+}
+
+#topCateogories{
+    text-align: center;
+    font-size: 30px;
+    margin: 25px 0px;
+}
+
+#topCatImages{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: auto;
+    gap: 20px;
+}
+#topCatImages>img{
+    width: 80%;
+}
+#shopnow{
+    width: 90%;
+    display: flex;
+    gap: 05%;
+    margin: auto;
+    margin-top: 40px;
+}
+#shopnow>:first-child{
+    width: 35%;
+}
+#shopnow>:last-child{
+    width: 60%;
+}
+
+#bestbuy{
+    width: 100%;
+    display:flex;
+    padding: 10px;
+    margin-top: 20px;
+    background: url(https://imagescdn.abof.com/img/app/brands/Allensolly/home/BestBuy/AS_D_BestBuyBg.png) top center no-repeat;
+    background-size: cover;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#bestbuy>:first-child{
+    width: 20%;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#bestbuy>:first-child h2{
+    font-family: 'Questrial', sans-serif;
+    font-size: 42px;
+}
+
+#bestbuy>:first-child button{
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#bestbuy>:last-child{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* footer */
+#footerContainer{
+    margin-top: 40px;
+    width:100%;
+    background-color: #ffffff;
+}
+#footer{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
+#footer>ul{
+    list-style-type: none;
+}
+#footer>ul>h5{
+    font-size: 15px;
+    font-weight: 700;
+}
+#footerCat{
+    display: flex;
+    flex-wrap: wrap;
+}
+#footerCat>ul{
+    list-style-type: none;
+}
+#footerCat>ul>h5{
+    font-size: 15px;
+    font-weight: 700;
+}
+li{
+    font-size: 13px;
+    margin-top: 5px;
+}
+#icons{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+/* form*/
+#loginform {
+    width: 80%;
+    margin: auto;
+}
+#loginform>label{
+    display: block;
+}
+#loginform>input{
+    display: block;
+    width: 100%;
+}
+#loginform>button{
+  width: 50%;
+  display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.signupbtn{
+    color: red;
+}
+#signupform {
+    width: 80%;
+    margin: auto;
+}
+#signupform>label{
+    display: block;
+}
+#signupform>input{
+    display: block;
+    width: 100%;
+}
+#signupform>button{
+  width: 50%;
+  display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.signupbtn{
+    color: red;
+}
+
+@media screen and (max-width: 480px){
+    #bestbuy{
+        display: block;
+    }
+    #navbar{
+        width: 95%;
+        margin: auto;
+    }
+    #bestbuy>:last-child>img{
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .logregbtn{
+        margin-right: 20px;
+    }
+    #navbar>:first-child{
+        width: 30%;
+    }
+    #navbar>:first-child>img{
+        width: 100%;
+    }
+    #search{
+        width: 100%;
+    }
+
+    #topCatImages{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
