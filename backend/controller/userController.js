@@ -2,8 +2,8 @@ const UserModel = require("../mediaModel/userModel");
 const jwt = require("jsonwebtoken");
 const env = require("dotenv");
 env.config()
-
 const secret = process.env.SECRET
+
 //POST-REQUEST FOR SIGNIN USER--------------------------
 async function SigninUser(req, res){
     try {
@@ -69,4 +69,16 @@ async function SigninUser(req, res){
     }
 }
 
-module.exports = {SigninUser,Loginuser}
+//DECODING THE TOKEN
+async function DecodeToken(req, res){
+   
+    try {
+        const token = req.body.token;
+        const decoded = await jwt.verify(token, secret);
+        res.send({"success":true, "message": decoded});
+    } catch (error) {
+        res.send({"success": false, "message":"cannot be decoded"})
+    }
+}
+
+module.exports = {SigninUser,Loginuser,DecodeToken}
