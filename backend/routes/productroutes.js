@@ -3,7 +3,7 @@ const { addProducts, getProducts, updateProducts, deleteProducts } = require('..
 const authMiddleware = require('../middleware');
 
 const Productrouter = express.Router();
-Productrouter.use(authMiddleware)
+//Productrouter.use(authMiddleware)
 
 Productrouter.post("/addProduct",addProducts)
 Productrouter.get("/",getProducts)
