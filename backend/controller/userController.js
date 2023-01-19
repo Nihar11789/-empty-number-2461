@@ -2,8 +2,8 @@ const UserModel = require("../mediaModel/userModel");
 const jwt = require("jsonwebtoken");
 const env = require("dotenv");
 env.config()
-
 const secret = process.env.SECRET
+
 //POST-REQUEST FOR SIGNIN USER--------------------------
 async function SigninUser(req, res){
     try {

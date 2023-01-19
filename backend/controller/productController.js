@@ -29,8 +29,7 @@ async function addProducts(req, res){
 
 async function getProducts(req, res){
     try {
-        // const token = req.headers.authorization
-        // let user = await jwt.verify(token, secret)
+
 //SORTING_PRODUCTS---------------------------------------------
         let query = req.query;
         //console.log(query);=={}
