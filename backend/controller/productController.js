@@ -29,9 +29,10 @@ async function addProducts(req, res){
 
 async function getProducts(req, res){
     try {
-        const token = req.headers.authorization
-        let user = await jwt.verify(token, secret)
-        
+        // const token = req.headers.authorization
+        // let user = await jwt.verify(token, secret)
+        let query = req.query;
+        console.log(query);
         let post = await productModel.find()
         res.send({
             "success": true,
