@@ -18,7 +18,7 @@ body{
 
 #navContainer{
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     margin: auto;
     z-index: 1;
     background-color: white;
@@ -57,4 +57,60 @@ body{
     font-family: 'Questrial', sans-serif;
     font-weight: 700;
     position: relative;
+}
+/* filter-section */
+#product-page{
+    height: auto;
+    width: 80%;
+    /* border: 1px solid red; */
+    display: flex;
+    margin:auto;
+   
+}
+#filter{
+    width: 30%;
+    /* border: 1px solid green; */
+}
+
+/* product-contains */
+
+#product-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  gap: 20px;
+  padding: 10px;
+}
+#products{
+    box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#price{
+    display: flex;
+    gap: 10px;
+}
+#price :nth-child(1){
+    font-weight: 600;
+}
+#price :nth-child(2){
+    text-decoration: line-through;
+    color: grey;
+}
+#price :nth-child(3){
+    color: rgb(93,163,96);
+}
+#product-img{
+    width: 100%;
+    height: 360px;
+}
+.filterbtn{
+    margin: 10px 10px 0px 0px;
+}
+#sorting{
+    margin-top: 20px;
+}
+#rating{
+    border: 1px solid red;
+    height: auto;
+    
 }
