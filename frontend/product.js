@@ -1,3 +1,5 @@
+
+
 async function getProduct (sort,filter){  
   console.log(sort,filter)
   let res = "";
@@ -56,10 +58,17 @@ function addProduct(products){
 
     let discount = document.createElement("p");
     discount.innerText = item.discount + "% off";
+
+    let cartbutton = document.createElement("button");
+    cartbutton.innerText = "ADD TO CART"
+    cartbutton.setAttribute("id", "cartbutton");
+    cartbutton.addEventListener("click",()=>{
+      addtoCart(item);
+    })
     
     ratingdiv.append(rating)
     pricediv.append(new_price,old_price,discount)
-    div.append(img,brand,desc,ratingdiv,color,pricediv)
+    div.append(img,brand,desc,ratingdiv,color,pricediv,cartbutton);
 
     document.getElementById("product-container").append(div);
   })
@@ -80,3 +89,20 @@ document.getElementById("rating-filter").addEventListener("click",(e)=>{
     filter = +e.target.value;
      getProduct(sort,+e.target.value)
 })
+
+
+
+async function addtoCart(item){
+   
+  let user = await JSON.parse(localStorage.getItem("userDetails"));
+  let req = await fetch("http://localhost:3300/cart/addCart",{
+    "method":"POST",
+    "body":JSON.stringify({...item,userid:user.id}),
+    "headers":{
+    "content-type":"application/json"
+    }
+  })
+  req = await req.json();
+  alert(req.message);
+}
+

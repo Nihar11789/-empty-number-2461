@@ -110,7 +110,18 @@ body{
     margin-top: 20px;
 }
 #rating{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: auto;
     
+}
+#filter{
+    margin-top: 50px;
+}
+#cartbutton{
+
+    width: 50%;
+    border: none;
+    background-color: aqua;
+    color: white;
+
 }
