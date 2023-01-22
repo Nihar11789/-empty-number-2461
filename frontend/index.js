@@ -43,10 +43,18 @@ document.getElementById("loginform").addEventListener("submit",async(e) => {
     console.log(obj,"obj")
     console.log(req,"req")
     if(req.success) {
-        alert("login successful")
-        let dec= jwt_decode(req.message)
-        console.log(dec,"dec")
+       
         localStorage.setItem("token",JSON.stringify(req.message));
+        let req2 = await fetch('https://chiffon-clothing.onrender.com/users/decode',{
+            "method":"POST",
+            "body":JSON.stringify({token:req.message}),
+            "headers":{
+                "content-type":"application/json"
+            }
+        })
+        req2 = await req2.json();
+        localStorage.setItem("userDetails",JSON.stringify(req2.message));
+        alert("login successful")
     } else {
         alert(req.message)
     }
