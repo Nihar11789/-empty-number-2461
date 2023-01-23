@@ -31,7 +31,7 @@ function appendData(data){
         </div>
         <div id="cart-details">
             <p>${item.description}</p>
-            <h3>${item.new_price}</h3>
+            <h3>₹${item.new_price}</h3>
             <button>+</button>
             <span>${item.quantity}</span>
             <button>-</button>
@@ -47,9 +47,9 @@ function appendData(data){
     document.getElementById("payment").innerHTML =  `
        <div>
        <h5>PAYMENT DETAILS</h5><hr>
-       <p>PRICE : ${Price}</p>
-       <p>TOTAL DISCOUNT : ${totalDiscount}</p>
-       <p>TOTAL AMOUNT : ${totalPrice}</p>
+       <p>PRICE : ₹${Price}</p>
+       <p>TOTAL DISCOUNT : ₹${totalDiscount}</p>
+       <p>TOTAL AMOUNT : ₹${totalPrice}</p>
        <button onclick = handleclick()> CHECKOUT </button>
        </div>
 `
